@@ -14,6 +14,8 @@ class CheckoutPage {
         cy.get('#order_comments').type('Pedido Urgente!')
         cy.get('#terms').click()
         cy.get('#place_order').click()
+        cy.get('.woocommerce-notice').should('contain', 'Seu pedido foi recebido')
+
     }
 
 }

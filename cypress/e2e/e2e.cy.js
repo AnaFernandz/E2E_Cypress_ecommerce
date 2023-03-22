@@ -20,9 +20,14 @@ context('Exercicio - Testes End-to-end - Fluxo de pedido', () => {
         })
     })
 
+    afterEach(() => {
+        cy.screenshot()
+    }); 
+    
     it('Deve selecionar um produto da lista - usando comando customizado', () => {
         cy.visit('produtos')
-        cy.addProdutos('Arcadio Gym Short', '34', 'Red', 3)
+        cy.addProdutos('Arcadio Gym Short', '33', 'Red', 4)
+        
 
         CheckoutPage.dadosCheckout(
             checkout[1].nome,
